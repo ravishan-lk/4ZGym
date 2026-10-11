@@ -1,0 +1,17 @@
+{
+  "name": "4z-gym-premium-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "4Z Gym premium bilingual website and Vercel-ready inquiry functions",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "check": "node --check scripts/build.mjs && node --check public/app.js && node --check api/inquiry.js",
+    "qa": "node scripts/qa.mjs",
+    "preview": "npm run build && node scripts/make-previews.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
