@@ -1,5 +1,67 @@
 (() => {
   'use strict';
+  // Native scrolling stays in control; motion is optional and never gates content.
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const story = document.querySelector('[data-scroll-story]');
+  const steps = story ? [...story.querySelectorAll('[data-story-step]')] : [];
+  const storyNumber = story?.querySelector('[data-story-number]');
+  const heroPhoto = document.querySelector('[data-parallax]');
+  let framePending = false;
+  const clamp = value => Math.max(0, Math.min(1, value));
+  function renderScroll() {
+    framePending = false;
+    const reduced = motionPreference.matches;
+    const distance = document.documentElement.scrollHeight - innerHeight;
+    document.documentElement.style.setProperty('--scroll', String(distance > 0 ? clamp(scrollY / distance) : 0));
+    if(heroPhoto) heroPhoto.style.setProperty('--parallax', reduced ? '0px' : `${Math.min(scrollY, 850) * .08}px`);
+    if(story) {
+      // Short screens and reduced-motion users get all three chapters in normal flow.
+      const enhance = !reduced && innerHeight >= 700;
+      story.classList.toggle('is-enhanced', enhance);
+      const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--navheight')) || 90;
+      const rect = story.getBoundingClientRect();
+      const stage = story.querySelector('.story-stage');
+      const progress = enhance ? clamp((top - rect.top) / Math.max(1, rect.height - stage.offsetHeight)) : 0;
+      const current = Math.min(steps.length - 1, Math.floor(progress * steps.length));
+      story.style.setProperty('--story-progress', String(Math.max(.03, progress)));
+      story.style.setProperty('--story-scale', String(1.03 + progress * .09));
+      steps.forEach((step, i) => {
+        step.classList.toggle('is-active', i === current);
+        // In the static fallback every chapter is accessible.
+        if(enhance) step.setAttribute('aria-hidden', String(i !== current));
+        else step.removeAttribute('aria-hidden');
+      });
+      if(storyNumber) storyNumber.textContent = String(current + 1);
+    }
+  }
+  function queueScroll() {
+    if(!framePending) { framePending = true; requestAnimationFrame(renderScroll); }
+  }
+  addEventListener('scroll', queueScroll, {passive:true});
+  addEventListener('resize', queueScroll, {passive:true});
+  addEventListener('load', queueScroll, {once:true});
+  motionPreference.addEventListener('change', () => {
+    if(motionPreference.matches) document.querySelectorAll('.reveal-enter').forEach(el=>el.classList.remove('reveal-enter'));
+    queueScroll();
+  });
+  renderScroll();
+  if('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      for(const entry of entries) if(entry.isIntersecting) {
+        if(!motionPreference.matches) entry.target.classList.add('reveal-enter');
+        revealObserver.unobserve(entry.target);
+      }
+    }, {threshold:.08});
+    document.querySelectorAll('.section-title, .intro-note, .program-card, .team-grid article, .branch-card, .price-card, .credential-grid>div, .gallery-tile, .about-values>div').forEach(el => {
+      if(el.closest('[data-scroll-story]')) return;
+      const siblingIndex = [...el.parentElement.children].indexOf(el);
+      el.style.setProperty('--reveal-delay', `${Math.min(siblingIndex % 3, 2) * 70}ms`);
+      revealObserver.observe(el);
+    });
+    document.addEventListener('focusin', event => {
+      event.target.closest('.reveal-enter')?.classList.remove('reveal-enter');
+    });
+  }
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   if(menuToggle && mobileNav) {
@@ -13,6 +75,12 @@
       if(e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
         menuToggle.click();menuToggle.focus();
       }
+    });
+    mobileNav.addEventListener('click', event => {
+      if(event.target.closest('a') && menuToggle.getAttribute('aria-expanded') === 'true') menuToggle.click();
+    });
+    window.matchMedia('(min-width: 1151px)').addEventListener('change', event => {
+      if(event.matches && menuToggle.getAttribute('aria-expanded') === 'true') menuToggle.click();
     });
   }
   // Branch choice changes the inquiry destination context, not unverified prices.

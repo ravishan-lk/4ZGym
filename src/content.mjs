@@ -82,7 +82,7 @@ export const copy = {
     },
     "hero": {
       "kicker": "TWO LOCATIONS. ONE STANDARD.",
-      "line1": "BUILT FOR",
+      "line1": "TRAIN.\nGROW.\nBECOME.",
       "line2": "MORE.",
       "body": "A stronger body. A clearer mind. Your fitness journey starts at 4Z Gym — in Eheliyagoda and Nawagamuwa.",
       "cta1": "Explore memberships",
@@ -91,18 +91,21 @@ export const copy = {
       "tag": "STRENGTH FOR BODY. PEACE FOR MIND.",
       "stat1": "GYM LOCATIONS",
       "stat2": "OPEN EVERY DAY",
-      "stat3": "YOUR NEXT CHAPTER"
+      "stat3": "YOUR NEXT CHAPTER",
+      "sideTitle": "STRENGTH FOR BODY.\nPEACE FOR MIND.",
+      "scroll": "SCROLL TO EXPLORE"
     },
     "intro": {
       "eyebrow": "WELCOME TO 4Z",
-      "heading": "A DIFFERENT KIND OF\nSTRONG.",
+      "heading": "MORE THAN\nA WORKOUT.",
       "p": "Training is personal. Progress is earned. At 4Z, our focus is on creating a place where people can show up, get guidance and keep moving forward.",
       "a": "Built around people",
       "ad": "A community-first approach to fitness.",
       "b": "A place to progress",
       "bd": "From first steps to ambitious goals.",
       "c": "Two convenient locations",
-      "cd": "Find your training home near you."
+      "cd": "Find your training home near you.",
+      "visualTitle": "YOUR GOALS.\nOUR COMMITMENT."
     },
     "founder": {
       "eyebrow": "THE PERSON BEHIND THE BRAND",
@@ -162,7 +165,8 @@ export const copy = {
         "Custom Sports Nutrition & Macronutrient Planning",
         "Postural Correction & Injury Prevention"
       ],
-      "femaleCoach": "Female Coach"
+      "femaleCoach": "Female Coach",
+      "summary": "International qualifications. Dubai training experience. National-level bodybuilding. Meet the coach bringing science-backed, personal guidance to your training."
     },
     "locations": {
       "eyebrow": "FIND YOUR PLACE",
@@ -379,6 +383,28 @@ export const copy = {
     "terms": {
       "title": "WEBSITE TERMS",
       "p": "Information on this preview website, including prices, service availability, is subject to confirmation. A submitted gym visit request is not a confirmed appointment. A gym membership is not activated by submitting a form. Please contact 4Z Gym for current fees, conditions, opening hours and availability. These terms are draft information pending owner review."
+    },
+    "journey": {
+      "label": "THE 4Z MINDSET",
+      "imageAlt": "Asanka training under red gym lighting",
+      "scroll": "KEEP SCROLLING. KEEP MOVING.",
+      "steps": [
+        {
+          "label": "SHOW UP",
+          "title": "EVERY JOURNEY\nSTARTS WITH YOU.",
+          "p": "Your first day or your next challenge. Walk in with a goal. We’ll help you find your starting point."
+        },
+        {
+          "label": "PUT IN THE WORK",
+          "title": "MOVE WITH\nINTENTION.",
+          "p": "Build good technique, train with a plan and make every session count. Your progress is personal."
+        },
+        {
+          "label": "REPEAT",
+          "title": "STRONGER BODY.\nCLEARER MIND.",
+          "p": "Small commitments become lasting habits. Find your rhythm, stay consistent and keep moving forward."
+        }
+      ]
     }
   },
   "si": {
@@ -443,7 +469,9 @@ export const copy = {
       "tag": "සිරුරට ශක්තිය. මනසට සැනසීම.",
       "stat1": "ජිම් ශාඛා",
       "stat2": "දිනපතා විවෘතයි",
-      "stat3": "ඔබේ අලුත් ආරම්භය"
+      "stat3": "ඔබේ අලුත් ආරම්භය",
+      "sideTitle": "සිරුරට ශක්තිය.\nමනසට සැනසීම.",
+      "scroll": "පහළට ගිහින් බලන්න"
     },
     "intro": {
       "eyebrow": "4Z GYM වෙත සාදරයෙන් පිළිගන්නවා",
@@ -454,7 +482,8 @@ export const copy = {
       "b": "පියවරෙන් පියවර දියුණුවක්",
       "bd": "පටන්ගන්න තැන ඉඳන් ඊළඟ ඉලක්කය දක්වා ඔබට සහය.",
       "c": "ඔබට පහසු ශාඛාවක්",
-      "cd": "ඇහැලියගොඩ හෝ නවගමුව—ඔබට ළඟම තැන තෝරාගන්න."
+      "cd": "ඇහැලියගොඩ හෝ නවගමුව—ඔබට ළඟම තැන තෝරාගන්න.",
+      "visualTitle": "ඔබේ ඉලක්කයට\nඅපේ කැපවීම."
     },
     "founder": {
       "eyebrow": "4Z GYM නිර්මාතෘ",
@@ -514,7 +543,8 @@ export const copy = {
         "පුද්ගලික ක්‍රීඩා පෝෂණ සැලසුම් සහ ප්‍රෝටීන්, කාබෝහයිඩ්‍රේට්, මේද අවශ්‍යතා සැලසුම් කිරීම",
         "නිවැරදි ඉරියව් පවත්වාගැනීම සහ තුවාල වළක්වාගැනීමට මඟපෙන්වීම"
       ],
-      "femaleCoach": "කාන්තා පුහුණුකරු"
+      "femaleCoach": "කාන්තා පුහුණුකරු",
+      "summary": "ජාත්‍යන්තර සුදුසුකම්, ඩුබායි පුහුණු අත්දැකීම් සහ ජාතික මට්ටමේ කායවර්ධන අත්දැකීම් සමඟ, ඔබට ගැළපෙන විද්‍යාත්මක පුහුණුවකට අසංක මඟපෙන්වනවා."
     },
     "locations": {
       "eyebrow": "ඔබට ළඟම 4Z GYM",
@@ -731,6 +761,28 @@ export const copy = {
     "terms": {
       "title": "වෙබ් අඩවි කොන්දේසි",
       "p": "මෙහි පෙන්වා ඇති ගාස්තු සහ සේවා ලබාගත හැකි බව තවමත් තහවුරු කළ යුතුයි. ජිම් එක බලන්න එන්න පණිවිඩයක් යැවූ පසු, අපේ කණ්ඩායම ඔබට කතා කරලා වේලාවක් තහවුරු කරයි. පෝරමය යැවීමෙන් පමණක් සාමාජිකත්වයක් ලැබෙන්නේ නැහැ. වත්මන් ගාස්තු, විවෘත වේලාවන් සහ කොන්දේසි අපෙන් දැනගන්න. මේ කොන්දේසි හිමිකරුගේ සමාලෝචනයට යටත් කෙටුම්පතක්."
+    },
+    "journey": {
+      "label": "4Z එක්ක ඉදිරියට",
+      "imageAlt": "රතු ආලෝකය යටතේ පුහුණු වන අසංක",
+      "scroll": "තව පහළට යමු.",
+      "steps": [
+        {
+          "label": "පටන්ගන්න",
+          "title": "පළමු පියවර\nඔබෙන්.",
+          "p": "ජිම් එකට එන පළමු දවස වුණත්, අලුත් ඉලක්කයක් තිබුණත්, ඔබට ගැළපෙන තැනින් පටන්ගන්න අපි උදව් කරනවා."
+        },
+        {
+          "label": "කැපවෙන්න",
+          "title": "සැලැස්මක් එක්ක\nපුහුණු වෙන්න.",
+          "p": "නිවැරදි ක්‍රම ඉගෙනගෙන, ඔබට ගැළපෙන සැලැස්මකින් පුහුණු වෙන්න. ඔබේ හැම පුංචි දියුණුවක්ම වටිනවා."
+        },
+        {
+          "label": "දිගටම කරගෙන යන්න",
+          "title": "සිරුරට ශක්තිය.\nමනසට සැනසීම.",
+          "p": "දවස ගානේ කරන පුංචි කැපවීම් හොඳ පුරුදු බවට පත්වෙනවා. ඔබට පහසු රටාවක් හදාගෙන, එක දිගට ඉදිරියට යමු."
+        }
+      ]
     }
   }
 };
