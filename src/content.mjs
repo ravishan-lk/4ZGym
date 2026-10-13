@@ -15,6 +15,7 @@ export const site = {
     {id:'nawagamuwa', name:'Nawagamuwa', address:'W2FC+H3G, Seethawakapura 10654', code:'NW', map:'W2FC+H3G Seethawakapura Sri Lanka', phone:null},
   ],
   media: {
+    mission: '/images/gym-mission.png',
     hero: '/images/hero-modern-banner.png',
     founder: '/images/asanka-headshot.png',
     eheliyagoda: '/images/4z-sign.jpg',
